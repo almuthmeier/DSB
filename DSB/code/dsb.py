@@ -38,7 +38,6 @@ def generate_sine_fcts_for_multiple_dimensions(dims, n_chg_periods, seed, n_base
     values_per_dim = []
     fcts_params_per_dim = []
     for d in range(dims):
-        print("\n\nd: ", d)
         values, fcts_params, step_size = generate_sine_fcts_for_one_dimension(
             n_chg_periods, desired_curv, desired_med_vel, l_bound, u_bound,
             max_n_functions, n_base_time_points, do_print)
@@ -74,12 +73,10 @@ def generate_sine_fcts_for_one_dimension(n_data, desired_curv, desired_med_vel,
     # number of functions to multiply
     min_n_functions = 1
     n_functions = np.random.randint(min_n_functions, max_n_functions + 1)
-    print("n_functions: ", n_functions)
 
     # maximum amplitude must match value range (apply root to compute max_a)
     value_range = u_bound - l_bound
     max_a = math.floor(math.pow(value_range / 2, 1 / n_functions))
-    print("max_a: ", max_a)
 
     # horizontal movement only positive, since positive and negative values
     # have the same effect; max_c is determined separately for each function
@@ -94,7 +91,6 @@ def generate_sine_fcts_for_one_dimension(n_data, desired_curv, desired_med_vel,
     step_size = 1  # arbitrary value
     # according to Shannon-Nyquist (b should be LESS than this border)
     max_b = 1 / (2 * step_size)
-    print("max_b: ", max_b)
 
     # define sampling points
     max_time_point = math.ceil(n_data * step_size)
@@ -318,8 +314,6 @@ def correct_range(fcts, time, l_bound, u_bound, y_movement_idx):
     possible_range = u_bound - l_bound
     if curr_range > possible_range:
         # nothing possible to do
-        print("curr_min: ", curr_min)
-        print("curr_max: ", curr_max)
         raise Exception("Current range is larger than possible range. No" +
                         " correction possible, otherwise it is not possible" +
                         " to comply with the velocity.")
@@ -405,7 +399,7 @@ def start_generation():
     Only for testing, doesn't store data set.
     '''
 
-    do_print = True
+    do_print = False
 
     seed = 252  # 4  # None  # 53
     dims = 1  # 2
