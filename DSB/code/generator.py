@@ -50,9 +50,9 @@ def create_problems():
     # -------------------------------------------------------------------------
 
     # path to data set directory to store data sets there
-    # ".../DynOptimization/DynOpt/code"
+    # ".../DSB/DSB/code"
     split_path = os.path.abspath(os.pardir).split('/')
-    # ".../DynOptimization/DynOpt"
+    # ".../DSB/DSB"
     path_to_dynopt = '/'.join(split_path[:-1])
 
     # store global optimum fitness (stays same for all changes)
