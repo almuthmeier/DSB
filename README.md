@@ -3,7 +3,7 @@ DSB (Dynamic Sine Benchmark)
 
 In [1] we proposed the Dynamic Sine Benchmark (DSB) as dynamic optimization benchmark especially suited for the evaluation of prediction-based optimization heuristics. In the meantime, we improved the generator and fixed some bugs. This project contains the updated code of the DSB generator, while the original code can be accessed in our project [DynOpt](https://github.com/almuthmeier/DynOpt)). 
 
-DSB moves static fitness functions, like Sphere or Rastrigin, in the solution space, while the fitness landscape's shape remains unchanged. For each movement of the fitness function, DSB defines an anchor point that determines the fitness landscape's position in the solution space. The anchor points are sampled from trigonometric functions, and the difficulty of the dynamics can be quantified by the parameters velocity and curviness. A detailed description of DSB can be found in this [document](link).
+DSB moves static fitness functions, like Sphere or Rastrigin, in the solution space, while the fitness landscape's shape remains unchanged. For each movement of the fitness function, DSB defines an anchor point that determines the fitness landscape's position in the solution space. The anchor points are sampled from trigonometric functions, and the difficulty of the dynamics can be quantified by the parameters velocity and curviness. A detailed description of DSB can be found in this [document](https://github.com/almuthmeier/DSB/blob/github/documentation.pdf).
 
 [1] A. Meier, O. Kramer: Predictive Uncertainty Estimation with Temporal Convolutional Networks for Dynamic Evolutionary Optimization, ICANN 2019.
 
